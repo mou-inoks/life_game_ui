@@ -1,4 +1,3 @@
-import { Color } from '@mui/material'
 import React from 'react'
 import './tableau.css'
 
