@@ -1,4 +1,7 @@
+import { Color } from '@mui/material'
 import React from 'react'
+import './tableau.css'
+
 
 const Tableau = () => {
     //Create the 1D Array
