@@ -8274,6 +8274,11 @@ symbol-tree@^3.2.4:
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
   integrity sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==
 
+synthetic-event@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/synthetic-event/-/synthetic-event-1.1.2.tgz#addf120c4a218ba9096a36a79f66f83722c52d91"
+  integrity sha512-m0kXev3tJWHhyhChWtC5G8Dzx4FufDfcfLJNmAq6JM6/0aVPg5yfbxpE/JHoiAgwsrP1WzHMbUti4U/No61WmA==
+
 tailwindcss@^3.0.2:
   version "3.0.24"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.0.24.tgz#22e31e801a44a78a1d9a81ecc52e13b69d85704d"
