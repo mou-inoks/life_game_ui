@@ -27,7 +27,9 @@ const Tableau = () => {
         <svg className='test' width={900} height={900}>
             {tableau.map((row: Array<0 | 1>, rowIndex : number) => {
                 return row.map((column: 0 | 1, columnIndex: number)  => {
-                    return <Rectangle x={50*rowIndex } y={50 * columnIndex } width={50} height={50} alive={column}/>
+                    return(
+                        <Rectangle x={50*rowIndex } y={50 * columnIndex } width={50} height={50} alive={column}/>
+                    ) 
                 })
             })}
         </svg> 
@@ -44,6 +46,8 @@ const Rectangle = (props: Cellules) => {
 
     let color = props.alive === 1 ? "green" : "black"
 
-    return <rect {...props} fill={color}/>
+    return (
+    <rect {...props} fill={color}/>
+    )
 }
 export default Tableau
