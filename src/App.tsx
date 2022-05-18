@@ -6,7 +6,6 @@ import {Box} from "@mui/material"
 function App() {
   return (
     <Box className="App">
-      <Formulaire />
       <Tableau />
     </Box>
   );

@@ -1,29 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 import './tableau.css'
+import Formulaire from './Formulaire';
 
 
 const Tableau = () => {
-    //Create the 1D Array
-    let tableau: Array<Array<0 | 1>> = new Array(40)
-    //Loop to create the 2D array
-    for(let i = 0; i < tableau.length; i++){
-        tableau[i] = new Array(tableau.length)
-    }
+   
+    var [tableau, setTableau] = useState(new Array);
 
-    let count = 0;
-    //Loop to init 2D array elements 
-    for(let i = 0; i < tableau.length; i++){
-        for(let l = 0; l < tableau.length; l++){
-            count++;
-            if((i + l) % 2 === 0)
-                tableau[i][l] = 1
-            else 
-                tableau[i][l] = 0
+    async function ApiRequest(){
+        const requestOption = {
+          method: 'POST', 
+          headers:{'Content-Type': 'application/json'},
+          body: {tableau}
         }
-    }
-    if(tableau.length === 0)
+        let response = await axios.post('https://localhost:7003/api/LifeGame')
+        
+        setTableau(response.data);
+      }
+
+    ApiRequest();
+    
+    console.log("TABLEJJHJHJ", tableau)
+    if(tableau === null)
         return null;
-        return (
+    else{
+        return (<>
+        <Formulaire/>
         <svg className='test' width={900} height={900}>
             {tableau.map((row: Array<0 | 1>, rowIndex : number) => {
                 return row.map((column: 0 | 1, columnIndex: number)  => {
@@ -33,7 +36,8 @@ const Tableau = () => {
                 })
             })}
         </svg> 
-        )
+        </>
+        )}
 }
 export interface Cellules {
     x: number,
@@ -44,7 +48,7 @@ export interface Cellules {
 }
 const Rectangle = (props: Cellules) => {
 
-    let color = props.alive === 1 ? "green" : "black"
+    let color = props.alive === 1 ? "black" : "white"
 
     return (
     <rect {...props} fill={color}/>
