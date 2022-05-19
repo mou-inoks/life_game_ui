@@ -8,25 +8,24 @@ const Tableau = () => {
    
     var [tableau, setTableau] = useState(new Array);
 
-    async function ApiRequest(){
+    async function ApiRequest(tableau : Array<>){
         const requestOption = {
           method: 'POST', 
           headers:{'Content-Type': 'application/json'},
           body: {tableau}
         }
-        let response = await axios.post('https://localhost:7003/api/LifeGame')
+        let response = await axios.post('https://localhost:7003/api/LifeGame', requestOption)
         
         setTableau(response.data);
       }
 
-    ApiRequest();
-    
-    console.log("TABLEJJHJHJ", tableau)
+    ApiRequest([[]]);
     if(tableau === null)
         return null;
     else{
         return (<>
         <Formulaire/>
+        <button onClick={() => ApiRequest(tableau)} className="submit">Placer</button>
         <svg className='test' width={900} height={900}>
             {tableau.map((row: Array<0 | 1>, rowIndex : number) => {
                 return row.map((column: 0 | 1, columnIndex: number)  => {
