@@ -5,8 +5,8 @@ Il s’agit d’un automate cellulaire, un modèle où chaque état conduit méc
 
 ## REGLES 🖥️
 
-À chaque itération, l'état d’une cellule est entièrement déterminé par l’état de ses huit cellules voisines, selon les règles suivantes : \n
-                - une cellule morte possédant exactement trois cellules voisines vivantes devient vivante (elle naît) ; \n
+À chaque itération, l'état d’une cellule est entièrement déterminé par l’état de ses huit cellules voisines, selon les règles suivantes : 
+                - une cellule morte possédant exactement trois cellules voisines vivantes devient vivante (elle naît) ; 
                 - une cellule vivante possédant deux ou trois cellules voisines vivantes le reste, sinon elle meurt
                 
                 
